@@ -14,16 +14,23 @@
 - 영속성 컨텍스트는 세션 단위로 생명주기를 갖고 있음 (세션이 생기면서 만들어지고, 세션이 종료되면 없어짐)
 - 영속성 컨텍스트에 접근하기 위해서 EntityManager를 사용함
 - EntityManager는 하나의 세션으로 보고 아래와 같은 방식으로 동작을 구성함
-  1. EntityManager 생성 (EntityManagerFactory를 통해 생성)
-  2. EntityManager가 가지고 있는 트랜잭션(transaction)을 시작
-  3. EntityManager를 통해 영속 컨텍스트에 접근하고 객체를 작업
-  4. 트랜잭션을 커밋(commit)하여 db에 반영
-  5. EntityManager 종료
+
+```text
+1. EntityManager 생성 (EntityManagerFactory를 통해 생성)
+2. EntityManager가 가지고 있는 트랜잭션(transaction)을 시작
+3. EntityManager를 통해 영속 컨텍스트에 접근하고 객체를 작업
+4. 트랜잭션을 커밋(commit)하여 db에 반영
+5. EntityManager 종료
+```
 
 ### 엔티티 클래스
 - jpa 어노테이션을 활용하여 엔티티 클래스를 정의
 - 주요 어노테이션은 아래와 같음
-  - @Entity : 해당 클래스가 jpa 엔티티 클래스라고 정의
-  - @Table : 해당 클래스가 데이터베이스의 어느 테이블에 매핑되는지 정의
-  - @Id : db 테이블의 primary key 칼럼과 매핑
-  - @Column : 매핑한 데이터베이스의 칼럼 이름과 필드 변수의 이름이 다를 경우 매핑하기 위해 사용
+
+```text
+@Entity : 해당 클래스가 jpa 엔티티 클래스라고 정의
+@Table : 해당 클래스가 데이터베이스의 어느 테이블에 매핑되는지 정의
+@Id : db 테이블의 primary key 칼럼과 매핑
+@Column : 매핑한 데이터베이스의 칼럼 이름과 필드 변수의 이름이 다를 경우 매핑하기 위해 사용
+```
+  
