@@ -1,6 +1,6 @@
 package com.hansung.main;
 
-import com.hansung.jpabasic.reserve.domain.User;
+import com.hansung.domain.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

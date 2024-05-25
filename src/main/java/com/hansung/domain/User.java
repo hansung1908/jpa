@@ -1,4 +1,4 @@
-package com.hansung.jpabasic.reserve.domain;
+package com.hansung.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
