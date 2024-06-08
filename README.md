@@ -31,11 +31,40 @@
 - 주요 어노테이션은 아래와 같음
 
 ```text
-@Entity : 해당 클래스가 jpa 엔티티 클래스라고 정의
+@Entity : 해당 클래스가 jpa 엔티티 클래스라고 정의, 필수
 @Table : 해당 클래스가 데이터베이스의 어느 테이블에 매핑되는지 정의
 @Id : db 테이블의 primary key 칼럼과 매핑
 @Column : 매핑한 데이터베이스의 칼럼 이름과 필드 변수의 이름이 다를 경우 매핑하기 위해 사용
+@Enumerated : enum 타입 매핑
 ```
 
-### 
-  
+```text
+@Table 속성
+name : 테이블 이름, 생략시 클래스와 같은 이름 (name = "hotel_info")
+catalog : 카탈로그 이름, mysql db 이름 (catalog = "point", name = "point_history")
+schema : 스키마 이름, 오라클 스키마 이름 (schema = "crm", name = "crm_stat"
+```
+
+```text
+@Enumerated 설정 값
+EnumType.STRING : enum 타입 값 이름을 저장 (문자열 타입)
+EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 타입, 값 변경시 문제가 생겨 사용 x)
+```
+
+### 엔티티 클래스 제약조건 (스펙 기준)
+- @Entity, @Id를 꼭 적용해야함
+- 인자 없는 기본 생성자 필요
+- 기본 생성자는 public or protected
+- 최상위 클래스여야 함
+- final 안 됨
+
+### 접근 타입
+- 필드 접근 : 필드 값을 사용하여 매핑
+- @Id 어노테이션을 필드에 붙히면 필드 접근
+---
+- 프로퍼티 접근 : getter / setter 메서드를 사용해서 매핑
+- @Id 어노테이션을 getter 메서드에 붙히면 프로퍼티 접근
+---
+- @Access 어노테이션을 사용해서 명시적으로 지정
+- @Access(AccessType.PROPERTY), @Access(AccessType.FILED)
+- 불필요한 setter 메서드를 만들 필요가 없는 필드 접근 선호
