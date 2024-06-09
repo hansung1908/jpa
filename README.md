@@ -59,12 +59,51 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - final 안 됨
 
 ### 접근 타입
-- 필드 접근 : 필드 값을 사용하여 매핑
+
+##### 필드 접근
+- 필드 값을 사용하여 매핑
 - @Id 어노테이션을 필드에 붙히면 필드 접근
 ---
-- 프로퍼티 접근 : getter / setter 메서드를 사용해서 매핑
+
+##### 프로퍼티 접근
+- getter / setter 메서드를 사용해서 매핑
 - @Id 어노테이션을 getter 메서드에 붙히면 프로퍼티 접근
 ---
+
 - @Access 어노테이션을 사용해서 명시적으로 지정
 - @Access(AccessType.PROPERTY), @Access(AccessType.FILED)
 - 불필요한 setter 메서드를 만들 필요가 없는 필드 접근 선호
+
+### 식별자 생성 방식
+
+##### 직접 할당 (Hotel 클래스 예제)
+- @Id 설정 대상에 직접 값 설정
+- 사용자가 입력한 값, 규칙에 따라 생성한 값 (이메일, 주문번호)
+- 저장하기 전에 생성자 할당, 보통 생성 시점에 전달
+---
+
+##### 식별 칼럼 방식 (Review 클래스 예제)
+- db가 식별 칼럼에 매핑 (mysql에 autoincreament)
+- @GeneratedValue(strategy = GenerationType.IDENTIFY) 설정
+- insert 쿼리를 실행해야 식별자를 알 수 있음
+- EntityManager의 persist() 호출 시점에 insert 쿼리 실행
+- persist() 실행할 때 객체에 식별자 값 할당됨
+---
+
+##### 시퀀스 사용 방식 (ActivityLog 클래스 예제)
+- jpa가 식별자 생성 처리 -> 객체 생성시에 식별값을 설정하지 않음
+- @SequenceGenerator로 시퀀스 생성기 설정
+- @GeneratedValue의 generator로 시퀀스 생서기 지정
+- EntityManager의 persist() 호출 시점에 시퀀스 사용
+- persist() 실행할 때 객체에 식별자 값 할당됨
+- insert 쿼리는 실행하지 않음
+---
+
+##### 테이블 사용 방식 (AccessLog 클래스 예제)
+- 테이블에 엔티티를 위한 키를 보관
+- 해당 테이블을 이용해서 다음 식별자 생성
+- @TableGenerator로 테이블 생성기 설정
+- @GeneratedValue의 generator로 테이블 생성기 지정
+- EntityManager의 persist() 호출 시점에 테이블 사용
+- persist() 실행할 때 테이블을 이요해서 식별자 구하고 이를 엔티티에 할당
+- insert 쿼리는 실행하지 않음
