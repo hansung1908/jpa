@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 public class ActivityLog {
     @Id
     @SequenceGenerator(
-            name = "log_seq_gen",
-            sequenceName = "activity_seq",
+            name = "log_seq_gen", // 코드 내에서 사용할 시퀀스 이름
+            sequenceName = "activity_seq", // db에 있는 실제 시퀀스 이름
             schema = "crm",
             allocationSize = 1 // 1 이외에 다른 숫자로 설정하면 불필요한 생성자가 여러개 생성될 수 있음
     )
