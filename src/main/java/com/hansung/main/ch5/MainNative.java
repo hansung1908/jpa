@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch5;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -11,7 +11,7 @@ public class MainNative {
     private static Logger logger = LoggerFactory.getLogger(MainNative.class);
 
     public static void main(String[] args) {
-        EMF.init();
+        EMF.init("ch5");
         EntityManager em = EMF.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {

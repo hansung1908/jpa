@@ -1,6 +1,5 @@
-package com.hansung.main;
+package com.hansung.main.ch6;
 
-import com.hansung.domain.Grade;
 import com.hansung.domain.Hotel;
 import com.hansung.jpa.EMF;
 import jakarta.persistence.EntityManager;
@@ -12,7 +11,7 @@ public class MainNullEmbedded {
     private static Logger logger = LoggerFactory.getLogger(MainNullEmbedded.class);
 
     public static void main(String[] args) {
-        EMF.init();
+        EMF.init("ch6");
         saveHotel();
         printHotel();
         EMF.close();
@@ -23,9 +22,9 @@ public class MainNullEmbedded {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.persist(
-                    new Hotel("H009", "HN", 2022, Grade.S7, null)
-            );
+//            em.persist(
+//                    new Hotel("H009", "HN", 2022, Grade.S7, null)
+//            );
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
@@ -42,7 +41,7 @@ public class MainNullEmbedded {
             tx.begin();
             Hotel hotel = em.find(Hotel.class, "H009");
             if (hotel != null) {
-                logger.info("주소: {}", hotel.getAddress());
+//                logger.info("주소: {}", hotel.getAddress());
             }
             tx.commit();
         } catch (Exception ex) {

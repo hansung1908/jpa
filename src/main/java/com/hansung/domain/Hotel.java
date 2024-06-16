@@ -19,9 +19,6 @@ public class Hotel {
     @Enumerated(EnumType.STRING)
     private Grade grade;
 
-    @Embedded // 사용할 엔티티 클래스에는 @Embedded를 붙혀서 사용
-    private Address address;
-
     private LocalDateTime created;
 
     @Column(name = "modified")
@@ -30,12 +27,11 @@ public class Hotel {
     protected Hotel() {
     }
 
-    public Hotel(String id, String name, int year, Grade grade, Address address) {
+    public Hotel(String id, String name, int year, Grade grade) {
         this.id = id;
         this.name = name;
         this.year = year;
         this.grade = grade;
-        this.address = address;
         this.created = LocalDateTime.now();
         this.lastModified = LocalDateTime.now();
     }
@@ -54,10 +50,6 @@ public class Hotel {
 
     public Grade getGrade() {
         return grade;
-    }
-
-    public Address getAddress() {
-        return address;
     }
 
     public LocalDateTime getCreated() {
@@ -79,5 +71,5 @@ public class Hotel {
                 ", lastModified=" + lastModified +
                 '}';
     }
-
 }
+

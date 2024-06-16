@@ -1,7 +1,6 @@
-package com.hansung.main;
+package com.hansung.main.ch6;
 
 import com.hansung.domain.Address;
-import com.hansung.domain.Grade;
 import com.hansung.domain.Hotel;
 import com.hansung.jpa.EMF;
 import jakarta.persistence.EntityManager;
@@ -13,7 +12,7 @@ public class MainEmbeddable {
     private static Logger logger = LoggerFactory.getLogger(MainEmbeddable.class);
 
     public static void main(String[] args) {
-        EMF.init();
+        EMF.init("ch6");
         saveHotel();
         printHotel();
         EMF.close();
@@ -25,8 +24,8 @@ public class MainEmbeddable {
         try {
             tx.begin();
             Address address = new Address("주소1", "주소2", "12345");
-            Hotel hotel = new Hotel("H00", "HN", 2022, Grade.S7, address);
-            em.persist(hotel);
+//            Hotel hotel = new Hotel("H00", "HN", 2022, Grade.S7, address);
+//            em.persist(hotel);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
@@ -42,7 +41,7 @@ public class MainEmbeddable {
             tx.begin();
             Hotel hotel = em.find(Hotel.class, "H00");
             if (hotel != null) {
-                logger.info("주소: {}", hotel.getAddress());
+//                logger.info("주소: {}", hotel.getAddress());
             }
             tx.commit();
         } catch (Exception ex) {

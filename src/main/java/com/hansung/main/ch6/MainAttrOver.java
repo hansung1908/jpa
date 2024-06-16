@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch6;
 
 import com.hansung.domain.Address;
 import com.hansung.domain.Employee;
@@ -12,7 +12,7 @@ public class MainAttrOver {
     private static Logger logger = LoggerFactory.getLogger(MainAttrOver.class);
 
     public static void main(String[] args) {
-        EMF.init();
+        EMF.init("ch6");
         saveEmployee();
         EMF.close();
     }

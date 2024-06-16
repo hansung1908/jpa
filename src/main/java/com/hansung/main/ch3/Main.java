@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch3;
 
 import jakarta.persistence.EntityExistsException;
 import com.hansung.app.*;
@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        EMF.init();
+        EMF.init("else");
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 

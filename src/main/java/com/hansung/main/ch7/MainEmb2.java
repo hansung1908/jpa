@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch7;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -13,11 +13,11 @@ public class MainEmb2 {
     private static Logger logger = LoggerFactory.getLogger(MainEmb2.class);
 
     public static void main(String[] args) {
-        EMF.init();
+        EMF.init("ch7");
         Long id = save();
         update(id);
-//        print(id);
-//        delete(id);
+        print(id);
+        delete(id);
         EMF.close();
     }
 

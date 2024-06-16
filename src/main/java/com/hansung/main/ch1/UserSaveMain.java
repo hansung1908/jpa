@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch1;
 
 import com.hansung.domain.User;
 import jakarta.persistence.*;
