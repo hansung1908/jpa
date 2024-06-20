@@ -12,7 +12,7 @@ public class MainAttrOver {
     private static Logger logger = LoggerFactory.getLogger(MainAttrOver.class);
 
     public static void main(String[] args) {
-        EMF.init("ch6");
+        EMF.init("jpabegin");
         saveEmployee();
         EMF.close();
     }

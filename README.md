@@ -127,3 +127,8 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - 다른 테이블에 저장된 데이터를 @Embeddable로 매핑 가능
 - 다른 테이블에 저장된 데이터가 개념적으로 value (값, 예 : address)일 때 사용
 - 1-1 관계인 두 테이블을 매핑할 때 종종 출현
+
+### 값 콜렉션 set 매핑
+- 콜렉션 테이블을 이용한 값 set 매핑
+- @ElementCollection과 @CollectionTable이면 끝
+- @Embeddable 사용시 해당 클래스에 equals + hashcode 메소드 생성

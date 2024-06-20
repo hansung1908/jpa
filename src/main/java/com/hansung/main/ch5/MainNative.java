@@ -11,7 +11,7 @@ public class MainNative {
     private static Logger logger = LoggerFactory.getLogger(MainNative.class);
 
     public static void main(String[] args) {
-        EMF.init("ch5");
+        EMF.init("jpabegin");
         EntityManager em = EMF.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {

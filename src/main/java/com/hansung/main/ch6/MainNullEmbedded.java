@@ -13,7 +13,7 @@ public class MainNullEmbedded {
     private static Logger logger = LoggerFactory.getLogger(MainNullEmbedded.class);
 
     public static void main(String[] args) {
-        EMF.init("ch6");
+        EMF.init("jpabegin");
         saveHotel();
         printHotel();
         EMF.close();

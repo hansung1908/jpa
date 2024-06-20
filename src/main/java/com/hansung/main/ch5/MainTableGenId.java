@@ -13,7 +13,7 @@ public class MainTableGenId {
     private static Logger logger = LoggerFactory.getLogger(MainTableGenId.class);
 
     public static void main(String[] args) {
-        EMF.init("ch5");
+        EMF.init("jpabegin");
         EntityManager em = EMF.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {

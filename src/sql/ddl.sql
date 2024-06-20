@@ -77,3 +77,15 @@ create table writer_address (
   addr2 varchar(255),
   zipcode varchar(255)
 );
+
+create table role (
+  id varchar(255) primary key,
+  name varchar(255)
+);
+
+create table role_perm (
+  role_id varchar(255),
+  perm varchar(255),
+  grantor varchar(255),
+  primary key (role_id, perm)
+);

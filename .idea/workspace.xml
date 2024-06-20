@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="테스트 실행을 위한 수정(추가)">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="일부 주석 추가 및 코드 수정 + sql 구문 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/jpa/EMF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/hansung/jpa/EMF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/main/MainAttrOver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/main/MainEmb2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/main/MainEmbeddable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/main/MainNullEmbedded.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/AccessLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/AccessLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/ActivityLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/ActivityLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/jpa/EMFOracle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/jpa/EMF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/jpa/EMF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch4/Main04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch4/Main04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch5/MainNative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch5/MainNative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch5/MainTableGenId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch5/MainTableGenId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainAttrOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainAttrOver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainEmbeddable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainEmbeddable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainNullEmbedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch6/MainNullEmbedded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch7/MainEmb2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch7/MainEmb2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/ddl.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +81,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Spring/jpa",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Spring/jpa&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Spring\jpa" />
@@ -105,20 +107,7 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.MainEmb2">
-    <configuration name="MainAttrOver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch6.MainAttrOver" />
-      <module name="jpa.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch6.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="애플리케이션.MainRole2">
     <configuration name="MainEmb2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch7.MainEmb2" />
       <module name="jpa.main" />
@@ -158,12 +147,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTableGenId" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch5.MainTableGenId" />
+    <configuration name="MainRole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch8.MainRole" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch5.*" />
+          <option name="PATTERN" value="com.hansung.main.ch8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainRole2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch8.MainRole2" />
+      <module name="jpa.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hansung.main.ch8.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.MainRole2" />
+        <item itemvalue="애플리케이션.MainRole" />
         <item itemvalue="애플리케이션.MainEmb2" />
         <item itemvalue="애플리케이션.MainEmbeddable" />
         <item itemvalue="애플리케이션.MainNullEmbedded" />
-        <item itemvalue="애플리케이션.MainAttrOver" />
-        <item itemvalue="애플리케이션.MainTableGenId" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718549999431</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="일부 주석 추가 및 코드 수정 + sql 구문 추가">
+      <created>1718553784924</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718553784924</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -256,6 +265,7 @@
     <MESSAGE value="영속성 컨텍스트 설명 추가" />
     <MESSAGE value="테스트 실행을 위한 수정" />
     <MESSAGE value="테스트 실행을 위한 수정(추가)" />
-    <option name="LAST_COMMIT_MESSAGE" value="테스트 실행을 위한 수정(추가)" />
+    <MESSAGE value="일부 주석 추가 및 코드 수정 + sql 구문 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="일부 주석 추가 및 코드 수정 + sql 구문 추가" />
   </component>
 </project>

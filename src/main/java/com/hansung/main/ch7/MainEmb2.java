@@ -13,7 +13,7 @@ public class MainEmb2 {
     private static Logger logger = LoggerFactory.getLogger(MainEmb2.class);
 
     public static void main(String[] args) {
-        EMF.init("ch7");
+        EMF.init("jpabegin");
         Long id = save();
         update(id);
         print(id);

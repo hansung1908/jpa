@@ -14,7 +14,7 @@ public class MainEmbeddable {
     private static Logger logger = LoggerFactory.getLogger(MainEmbeddable.class);
 
     public static void main(String[] args) {
-        EMF.init("ch6");
+        EMF.init("jpabegin");
         saveHotel();
         printHotel();
         EMF.close();

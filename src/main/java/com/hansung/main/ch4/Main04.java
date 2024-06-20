@@ -12,7 +12,7 @@ public class Main04 {
     private static Logger logger = LoggerFactory.getLogger(Main04.class);
 
     public static void main(String[] args) {
-        EMF.init("ch4");
+        EMF.init("jpabegin");
 
         Hotel entity = new Hotel("H-01", "말", 2022, Grade.S5);
 
