@@ -132,3 +132,8 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - 콜렉션 테이블을 이용한 값 set 매핑
 - @ElementCollection과 @CollectionTable이면 끝
 - @Embeddable 사용시 해당 클래스에 equals + hashcode 메소드 생성
+
+### 값 콜렉션 list 매핑
+- 콜렉션 테이블을 이용한 값 list 매핑
+- set과 동일하게 @ElementCollection과 @CollectionTable 사용
+- 추가로 인덱스 값 지정을 위한 @OrderColumn 사용

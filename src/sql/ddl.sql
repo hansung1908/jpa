@@ -89,3 +89,16 @@ create table role_perm (
   grantor varchar(255),
   primary key (role_id, perm)
 );
+
+create table question (
+  id varchar(255) primary key,
+  text varchar(255)
+);
+
+create table question_choice (
+  question_id varchar(255),
+  idx int,
+  text varchar(255),
+  input boolean,
+  primary key (question_id, text)
+);
