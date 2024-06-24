@@ -21,6 +21,8 @@
         <class>com.hansung.domain.Role2</class>
         <class>com.hansung.domain.Question</class>
         <class>com.hansung.domain.Question2</class>
+        <class>com.hansung.domain.Document</class>
+        <class>com.hansung.domain.Document2</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <!-- db 연결 설정 -->
