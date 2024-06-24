@@ -102,3 +102,17 @@ create table question_choice (
   input boolean,
   primary key (question_id, text)
 );
+
+create table doc (
+  id varchar(255) primary key,
+  title varchar(255),
+  content varchar(255)
+);
+
+create table doc_prop (
+  doc_id varchar(255),
+  name varchar(255),
+  value varchar(255),
+  enabled boolean,
+  primary key (doc_id, name)
+);

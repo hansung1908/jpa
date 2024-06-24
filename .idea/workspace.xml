@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 list 매핑 정리">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/domain/GrantedPermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/hansung/domain/GrantedPermission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/hansung/main/ch8/MainRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/hansung/main/ch8/MainRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 map 매핑 정리" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719154375847</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="값 콜렉션 map 매핑 정리">
+      <created>1719239906519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719239906519</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -266,6 +267,7 @@
     <MESSAGE value="테스트 실행을 위한 수정(추가)" />
     <MESSAGE value="일부 주석 추가 및 코드 수정 + sql 구문 추가" />
     <MESSAGE value="값 콜렉션 list 매핑 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 list 매핑 정리" />
+    <MESSAGE value="값 콜렉션 map 매핑 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 map 매핑 정리" />
   </component>
 </project>
