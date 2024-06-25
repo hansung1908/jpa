@@ -12,7 +12,7 @@ public class Role {
     private String id;
     private String name;
 
-    @ElementCollection // 조회시 eager 방식을 사용하고 싶으면 (fetch = FetchType.EAGER), 기본은 lazy방식
+    @ElementCollection(fetch = FetchType.EAGER) // 조회시 eager 방식을 사용하고 싶으면 (fetch = FetchType.EAGER), 기본은 lazy방식
     @CollectionTable( // role_perm 테이블의 role_id를 참조 (join)
             name = "role_perm",
             joinColumns = @JoinColumn(name = "role_id")

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 map 매핑 정리" />
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 map 매핑 sql 누락 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Role.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +97,20 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.MainDocument2">
+  <component name="RunManager" selected="애플리케이션.Main11">
+    <configuration name="Main11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch11.Main11" />
+      <module name="jpa.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hansung.main.ch11.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainDocument1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch10.MainDocument1" />
       <module name="jpa.main" />
@@ -146,26 +163,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainRole2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch8.MainRole2" />
-      <module name="jpa.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch8.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Main11" />
         <item itemvalue="애플리케이션.MainDocument2" />
         <item itemvalue="애플리케이션.MainDocument1" />
         <item itemvalue="애플리케이션.MainQuestion2" />
         <item itemvalue="애플리케이션.MainQuestion1" />
-        <item itemvalue="애플리케이션.MainRole2" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719239906519</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="값 콜렉션 map 매핑 sql 누락 수정">
+      <created>1719243566174</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719243566174</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -268,6 +279,7 @@
     <MESSAGE value="일부 주석 추가 및 코드 수정 + sql 구문 추가" />
     <MESSAGE value="값 콜렉션 list 매핑 정리" />
     <MESSAGE value="값 콜렉션 map 매핑 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 map 매핑 정리" />
+    <MESSAGE value="값 콜렉션 map 매핑 sql 누락 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 map 매핑 sql 누락 수정" />
   </component>
 </project>
