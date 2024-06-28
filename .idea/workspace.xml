@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 map 매핑 sql 누락 수정">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="값 콜렉션 주의사항 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Main11">
+  <component name="RunManager" selected="애플리케이션.MainRepeatable">
     <configuration name="Main11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch11.Main11" />
       <module name="jpa.main" />
@@ -137,12 +136,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainQuestion1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch9.MainQuestion1" />
+    <configuration name="MainLifecycle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch12.MainLifecycle" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch9.*" />
+          <option name="PATTERN" value="com.hansung.main.ch12.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,12 +149,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainQuestion2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch9.MainQuestion2" />
+    <configuration name="MainRepeatable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch12.MainRepeatable" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch9.*" />
+          <option name="PATTERN" value="com.hansung.main.ch12.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.MainRepeatable" />
+        <item itemvalue="애플리케이션.MainLifecycle" />
         <item itemvalue="애플리케이션.Main11" />
         <item itemvalue="애플리케이션.MainDocument2" />
         <item itemvalue="애플리케이션.MainDocument1" />
-        <item itemvalue="애플리케이션.MainQuestion2" />
-        <item itemvalue="애플리케이션.MainQuestion1" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719243566174</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="값 콜렉션 주의사항 정리">
+      <created>1719323817599</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719323817599</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -280,6 +286,7 @@
     <MESSAGE value="값 콜렉션 list 매핑 정리" />
     <MESSAGE value="값 콜렉션 map 매핑 정리" />
     <MESSAGE value="값 콜렉션 map 매핑 sql 누락 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 map 매핑 sql 누락 수정" />
+    <MESSAGE value="값 콜렉션 주의사항 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="값 콜렉션 주의사항 정리" />
   </component>
 </project>
