@@ -116,3 +116,15 @@ create table doc_prop (
   enabled boolean,
   primary key (doc_id, name)
 );
+
+create table membership_card (
+  card_no varchar(255) primary key,
+  user_email varchar(255),
+  expiry_date date,
+  enabled boolean
+);
+
+create table best_pick (
+  user_email varchar(255) primary key,
+  title varchar(255)
+);

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="영속 컨텍스트 + 라이프 사이클 정리">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="엔티티 연관 매핑 배경지식 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/ddl.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,7 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.MainRepeatable">
+  <component name="RunManager" selected="애플리케이션.MainPk">
     <configuration name="Main11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch11.Main11" />
       <module name="jpa.main" />
@@ -110,25 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainDocument1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch10.MainDocument1" />
+    <configuration name="MainFk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch14.MainFk" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch10.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainDocument2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch10.MainDocument2" />
-      <module name="jpa.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch10.*" />
+          <option name="PATTERN" value="com.hansung.main.ch14.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,6 +131,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.hansung.main.ch12.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch14.MainPk" />
+      <module name="jpa.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hansung.main.ch14.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.MainPk" />
+        <item itemvalue="애플리케이션.MainFk" />
         <item itemvalue="애플리케이션.MainRepeatable" />
         <item itemvalue="애플리케이션.MainLifecycle" />
         <item itemvalue="애플리케이션.Main11" />
-        <item itemvalue="애플리케이션.MainDocument2" />
-        <item itemvalue="애플리케이션.MainDocument1" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719586693093</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="엔티티 연관 매핑 배경지식 정리">
+      <created>1719758908583</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719758908583</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -295,6 +304,7 @@
     <MESSAGE value="값 콜렉션 map 매핑 sql 누락 수정" />
     <MESSAGE value="값 콜렉션 주의사항 정리" />
     <MESSAGE value="영속 컨텍스트 + 라이프 사이클 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="영속 컨텍스트 + 라이프 사이클 정리" />
+    <MESSAGE value="엔티티 연관 매핑 배경지식 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="엔티티 연관 매핑 배경지식 정리" />
   </component>
 </project>
