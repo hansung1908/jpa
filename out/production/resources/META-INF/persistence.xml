@@ -23,6 +23,8 @@
         <class>com.hansung.domain.Question2</class>
         <class>com.hansung.domain.Document</class>
         <class>com.hansung.domain.Document2</class>
+        <class>com.hansung.domain.MembershipCard</class>
+        <class>com.hansung.domain.BestPick</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <!-- db 연결 설정 -->
