@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="엔티티 연관 매핑 배경지식 정리">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="엔티티 간 1-1 단방향 관련 매핑 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
@@ -98,20 +98,7 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.MainPk">
-    <configuration name="Main11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch11.Main11" />
-      <module name="jpa.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch11.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="애플리케이션.MainNto1">
     <configuration name="MainFk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch14.MainFk" />
       <module name="jpa.main" />
@@ -131,6 +118,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.hansung.main.ch12.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainNto1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch15.MainNto1" />
+      <module name="jpa.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hansung.main.ch15.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.MainNto1" />
         <item itemvalue="애플리케이션.MainPk" />
         <item itemvalue="애플리케이션.MainFk" />
         <item itemvalue="애플리케이션.MainRepeatable" />
         <item itemvalue="애플리케이션.MainLifecycle" />
-        <item itemvalue="애플리케이션.Main11" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719758908583</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="엔티티 간 1-1 단방향 관련 매핑 정리">
+      <created>1720018425196</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720018425196</updated>
+    </task>
+    <task id="LOCAL-00014" summary="엔티티 간 1-1 단방향 관련 매핑 정리">
+      <created>1720018432856</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720018432856</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -305,6 +319,7 @@
     <MESSAGE value="값 콜렉션 주의사항 정리" />
     <MESSAGE value="영속 컨텍스트 + 라이프 사이클 정리" />
     <MESSAGE value="엔티티 연관 매핑 배경지식 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="엔티티 연관 매핑 배경지식 정리" />
+    <MESSAGE value="엔티티 간 1-1 단방향 관련 매핑 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="엔티티 간 1-1 단방향 관련 매핑 정리" />
   </component>
 </project>

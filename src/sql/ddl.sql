@@ -128,3 +128,15 @@ create table best_pick (
   user_email varchar(255) primary key,
   title varchar(255)
 );
+
+create table sight (
+  id varchar(255) primary key,
+  name varchar(255)
+);
+
+create table sight_review (
+  id int auto_increment primary key,
+  sight_id varchar(255) not null,
+  grade int,
+  comment varchar(255)
+);
