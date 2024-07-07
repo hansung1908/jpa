@@ -140,3 +140,38 @@ create table sight_review (
   grade int,
   comment varchar(255)
 );
+
+create table team (
+  id varchar(255) primary key,
+  name varchar(255)
+);
+
+create table player (
+  id varchar(255) primary key,
+  team_id varchar(255),
+  name varchar(255)
+);
+
+create table survey (
+  id varchar(255)primary key,
+  name varchar(255)
+);
+
+create table survey_question (
+  id varchar(255) primary key,
+  survey_id varchar(255),
+  order_no int,
+  title varchar(255)
+);
+
+create table game (
+  id varchar(255) primary key,
+  name varchar(255)
+);
+
+create table game_member (
+  id varchar(255) primary key,
+  name varchar(255),
+  game_id varchar(255),
+  role_name varchar(255)
+);

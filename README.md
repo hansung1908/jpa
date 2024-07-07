@@ -187,3 +187,11 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 ##### n-1 매핑
 - n-1 단방향 연관 매핑 설정
 - @ManyToOne, @JoinColumn 사용하여 참조하려는 객체를 매핑
+---
+
+##### 1-n 매핑
+- 1-n 단방향 연관 매핑
+- 콜렉션 (set, list, map)을 사용한 매핑
+- set 사용 시, @OneToMany, @JoinColumn을 사용하여 매핑
+- list 사용 시, @OneToMany, @JoinColumn에다 추가로 순서를 설정하기 위한 @OrderColumn을 사용하여 매핑
+- map 사용 시, @OneToMany, @JoinColumn에다 추가로 키 값 저정을 위한 @MapKeyColumn을 사용하여 매핑

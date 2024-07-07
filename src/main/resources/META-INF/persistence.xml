@@ -27,6 +27,12 @@
         <class>com.hansung.domain.BestPick</class>
         <class>com.hansung.domain.Sight</class>
         <class>com.hansung.domain.SightReview</class>
+        <class>com.hansung.domain.Player</class>
+        <class>com.hansung.domain.Team</class>
+        <class>com.hansung.domain.Survey</class>
+        <class>com.hansung.domain.SurveyQuestion</class>
+        <class>com.hansung.domain.Game</class>
+        <class>com.hansung.domain.GameMember</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <!-- db 연결 설정 -->
