@@ -11,7 +11,7 @@ public class Team {
     @Id
     private String id;
     private String name;
-    @OneToMany // 1-n 매핑 설정
+    @OneToMany(cascade = CascadeType.PERSIST) // 1-n 매핑 설정
     @JoinColumn(name = "team_id")
     private Set<Player> players = new HashSet<>();
 

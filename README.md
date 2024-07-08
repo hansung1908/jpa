@@ -195,3 +195,17 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - set 사용 시, @OneToMany, @JoinColumn을 사용하여 매핑
 - list 사용 시, @OneToMany, @JoinColumn에다 추가로 순서를 설정하기 위한 @OrderColumn을 사용하여 매핑
 - map 사용 시, @OneToMany, @JoinColumn에다 추가로 키 값 저정을 위한 @MapKeyColumn을 사용하여 매핑
+
+### 영속성 전파
+- 연관된 엔티티에 영속 상태를 전파
+- 예, 저장할 때 연관된 엔티티도 함께 저장
+- 영속성 전파 종류 : ALL, PERSIST, MERGE, REMOVE, REFRESH, DETACH
+- 기본적으로 사용하면 안됨 (엔티티 연관 매핑과 같은 이유)
+
+### 연관 고려 사항
+- 연관 대신 id 값으로 참조 고려
+- 객체 탐색이 쉽다고 연관 쓰기 없기
+- 조회는 전용 쿼리나 구현 사용 고려 (CQRS)
+- 엔티티가 아닌 밸류인지 확인 (1-1, 1-n 관계에서 특히)
+- 1-n 보다는 n-1 (이 경우도 어쩔 수 없는 상황이면)\
+- 양방향 x
