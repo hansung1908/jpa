@@ -209,3 +209,34 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - 엔티티가 아닌 밸류인지 확인 (1-1, 1-n 관계에서 특히)
 - 1-n 보다는 n-1 (이 경우도 어쩔 수 없는 상황이면)\
 - 양방향 x
+
+### jpa flush()
+- jpa로 엔티티를 저장할 경우 커밋 이전까지 실제 db에 저장이 되지않아 데이터 조회시 데이터가 없어 오류 발생
+- 스프링의 경우 @Transactional이 붙은 메서드 실행 종료 시점에 커밋
+- 즉 order() 메서드 실행 종료 시점에서 커밋
+- jpa도 order() 메서드 실행 종료 시점에 insert 쿼리 실행
+- db 프로시저를 실행하는 시점은 insert 쿼리 실행 이전임
+```text
+@Transactional
+public void order(OrderRequest req) {
+        ...
+        Order order = ...;
+        reqository.save(order);
+        callPostOrderProcedure(order.getId()); // 프로시저에서 데이터 조회 실패
+}
+```
+---
+
+- flush() 메소드는 영속 컨텍스트 데이터를 미리 반영
+- jpa와 sql을 함께 사용할 때 필요
+- 조회전 flush() 메소드를 호출하여 앞선 내용들을 미리 db에 반영하여 오류 해결
+```text
+@Transactional
+public void order(OrderRequest req) {
+        ...
+        Order order = ...;
+        reqository.save(order);
+        reqository.flush(); // insert 쿼리 실행
+        callPostOrderProcedure(order.getId()); // select 쿼리에서 조회됨
+}
+```
