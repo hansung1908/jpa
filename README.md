@@ -199,6 +199,8 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 ### 영속성 전파
 - 연관된 엔티티에 영속 상태를 전파
 - 예, 저장할 때 연관된 엔티티도 함께 저장
+- 연관 관련 매핑 어노테이션에 cascade 옵션을 추가하면 사용 가능
+- @OneToMany(cascade = CascadeType.PERSIST)
 - 영속성 전파 종류 : ALL, PERSIST, MERGE, REMOVE, REFRESH, DETACH
 - 기본적으로 사용하면 안됨 (엔티티 연관 매핑과 같은 이유)
 

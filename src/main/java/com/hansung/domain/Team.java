@@ -11,7 +11,7 @@ public class Team {
     @Id
     private String id;
     private String name;
-    @OneToMany(cascade = CascadeType.PERSIST) // 1-n 매핑 설정
+    @OneToMany(cascade = CascadeType.PERSIST) // 1-n 매핑 설정 + 영속성 전파를 위한 cascade 추가
     @JoinColumn(name = "team_id")
     private Set<Player> players = new HashSet<>();
 
