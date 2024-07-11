@@ -212,6 +212,107 @@ EnumType.ORDINAL (기본값) : enum 타입의 값의 순서를 저장 (숫자 �
 - 1-n 보다는 n-1 (이 경우도 어쩔 수 없는 상황이면)\
 - 양방향 x
 
+### jpql
+- jpa query language
+- sql 쿼리와 유사
+- 테이블 대신 엔티티 이름, 속성 사용
+- jpql 기본 구조
+- select 별칭 from 엔티티명 별칭 ...
+```text
+select r from Review r
+select r from Review as r
+```
+---
+
+- 쿼리 생성
+- TypedQuery<T> ~ = EntityManager.createQuery(String ql, Class<T> resultClass)
+```text
+TypedQuery<Review> query = em.createQuery(
+    "select r from Review r", // 쿼리
+    Review.class); // 결과 타입
+    
+List<Review> reviews = query.getResultList();
+```
+---
+
+- where + and, or, 괄호 등
+```text
+select r from Review r where r.hotelId = :hotelId // :hotelId : 비교 대상 이름 지정
+select r from Review r where r.hotelId = ? // ? : 위치 기반 비교 대상 지정
+select r from Reivew r where r.hotelId = :hotelId and r.mark > :minMark
+select p from Player p where p.position = :pos or p.team.id = :teamId
+```
+---
+
+- 파라미터
+- 이름 사용 : query.setParameter("hotelId", "H-001") 
+- 인덱스 기반 : query.setParameter(0, "H-001")
+```text
+TypedQuery<Review> query = em.createQuery(
+    "select r from Review r where r.hotelId = :hotelId order by r.id. desc",
+    Review.class);
+    
+query.setParameter("hotelId", "H-001");
+```
+---
+
+- order by
+```text
+select r from Review r order by r.id // 기본값은 오름차순
+select r from Review r order by r.id asc // 오름차순
+select r from Review r order by r.id desc // 내림차순
+select p from Player p order by p.position, p.name
+select p from Player p order by p.team.id, p.name
+```
+---
+
+- 비교 연산자
+```text
+= : u.name = 'JPA'
+<> : o.state <> ? // !=
+> >= < <= : p.salary > 2000
+between : mc.expiryDate between ? and ?
+in, not in : o.mark in (1, 2, 3)
+like, not like : u.name like '%유%'
+is null, is not null : u.name is null
+```
+---
+
+- 페이징 처리
+- mysql의 경우, 쿼리에서 limit를 통해 페이징 처리
+```text
+TypedQuery<Review> query = em.createQuery(
+    "select r from Review r where r.hotelId = :hotelId order by r.id. desc",
+    Review.class);
+    
+query.setParameter("hotelId", "H-001");
+query.setFirstResult(8); // 0부터 시작, 시작 행
+query.setMaxResult(4); // 최대 결과 갯수
+
+List<Review> reviews = query.getResultList();
+```
+---
+
+- 그 외
+- 집합 함수
+  - count, max, min, avg, sum
+- group by, having
+- 콜렉션 관련 비교
+  - member of, not member of, is empty, is not empty
+  - exist, all, any
+- jpql 함수
+  - concat, substring, trim, abs, sqrt
+  - 콜렉션 함수 : size, index 등
+---
+
+- 다음 경우는 jpql 말고 일반 쿼리 사용 고려
+- 여러 테이블 조인
+  - 레거시 테이블 조인
+- dbms에 특화된 쿼리 필요
+  - 예, 오라클 힌트
+- 서브 쿼리 필요
+- 통계, 대량 데이터 조회 / 처리
+
 ### jpa flush()
 - jpa로 엔티티를 저장할 경우 커밋 이전까지 실제 db에 저장이 되지않아 데이터 조회시 데이터가 없어 오류 발생
 - 스프링의 경우 @Transactional이 붙은 메서드 실행 종료 시점에 커밋
