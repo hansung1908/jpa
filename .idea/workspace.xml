@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="영속성 전파 &amp; 연관 고려사항 추가 코드 + 내용">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="jpql 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -96,7 +96,7 @@
       <recent name="C:\Spring\jpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.MainJpql">
+  <component name="RunManager" selected="애플리케이션.MainCriteria">
     <configuration name="MainCascade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch17.MainCascade" />
       <module name="jpa.main" />
@@ -110,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainJpql" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch18.MainJpql" />
+    <configuration name="MainCriteria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.MainCriteria" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch18.*" />
+          <option name="PATTERN" value="com.hansung.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch16.MainList" />
+    <configuration name="MainJpql" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hansung.main.ch18.MainJpql" />
       <module name="jpa.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hansung.main.ch16.*" />
+          <option name="PATTERN" value="com.hansung.main.ch18.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.MainCriteria" />
         <item itemvalue="애플리케이션.MainJpql" />
         <item itemvalue="애플리케이션.MainCascade" />
         <item itemvalue="애플리케이션.MainSet" />
         <item itemvalue="애플리케이션.MainMap" />
-        <item itemvalue="애플리케이션.MainList" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720623120741</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="jpql 정리">
+      <created>1720702043337</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1720702043337</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -358,6 +365,7 @@
     <MESSAGE value="영속성 전파 &amp; 연관 고려사항 정리" />
     <MESSAGE value="jpa flush 정리" />
     <MESSAGE value="영속성 전파 &amp; 연관 고려사항 추가 코드 + 내용" />
-    <option name="LAST_COMMIT_MESSAGE" value="영속성 전파 &amp; 연관 고려사항 추가 코드 + 내용" />
+    <MESSAGE value="jpql 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="jpql 정리" />
   </component>
 </project>

@@ -313,6 +313,132 @@ List<Review> reviews = query.getResultList();
 - 서브 쿼리 필요
 - 통계, 대량 데이터 조회 / 처리
 
+### criteria
+- 코드로 쿼리를 구성하는 api
+- jpql 대신 자바 사용
+```text
+// 1. CriteriaBuilder 생성 (이후 cb로 표현)
+CriteriaBuilder cb = em.getCriteriaBuilder();
+
+// 2. CreateQuery 생성 (이후 cq로 표현) 파라미터는 쿼리 결과 타입
+CriteriaQuery<Review> cq = cb.createQuery(Review.class);
+
+// 3. from 메소드로 from 절 엔티티 지정, Root 타입 이용해서 엔티티 속성 접근
+Root<Review> root = cq.from(Review.class);
+
+// 4. select 메소드로 select 대상 지정
+cq.select(root);
+
+// 5. where 메소드로 조건 지정, cb를 이용해서 predicate 생성
+cq.where(cb.equal(root.get("hotelId"), "H-001"));
+
+// 6. orderBy 메소드로 정렬 순서 지정, cb를 이용해서 Order 생성
+cq.orderBy(cb.asc(root.get("id")));
+
+// select r from Review r where r.hotelId = 'H-001'
+
+// 7. cq를 이용해서 TypedQuery 생성
+TypedQuery<Review> query = em.createQuery(cq);
+query.setFirstResult(4); // 0부터 시작
+query.setMaxResults(4);
+List<Review> reviews = query.getResultList();
+```
+---
+
+- 검색 조건 지정
+- where 메소드에 검색 조건 전달
+- 검색 조건은 cb를 이용해서 생성
+- 예, 같음 조건은 equal 메소드로 생성
+- 검색 조건에 사용할 엔티티 속성은 get 메서드로 구함
+```text
+Root<Review> root = cq.from(Review.class);
+
+// 생성 조건 : Review의 hotelId가 'H-001'과 같음
+Predicate predicate = cb.equal(root.get("hotelId"), "H-001");
+
+cq.where(predicate);
+```
+- 조합
+- and, or 메소드로 조건 조합
+```text
+Predicate p1 = cb.equal(root.get("hotelId"), "H-001");
+Predicate p2 = cb.greaterThan(root.get("created"), LocalDateTime.now().minusDays(10));
+Predicate predicate = cb.and(p1, p2);
+cq.where(predicate);
+```
+---
+
+- 정렬 순서
+- orderBy 메서드로 정렬 지정
+- asc, desc 메서드로 정렬 정보(Order) 생성
+- 정렬 대상 속성은 get 메서드로 구함
+```text
+Order orderId = cb.asc(root.get("id"));
+cq.orderBy(orderId);
+```
+- 한 개 이상 정렬 지정 가능
+```text
+cq.orderBy(
+    cb.asc(root.get("hotelId")),
+    cb.desc(root.get("id"))
+);
+```
+---
+
+- get 메서드와 제네릭 타입
+- <Y> Path<Y> get(String attributeName)
+- in 메소드 조건 생성할 때 타입 파라미터 지정하면 유용
+```text
+// mark 속성이 int 타입
+CriteriaBuilder.In(Object> markCond = cb.in(root.get("mark"));
+markCond.value(1).value("a"); // 런타임에 쿼리 생성 시점에 에러!
+```
+```text
+// mark 속성이 int 타입
+CriteriaBuilder.In(Object> markCond = cb.in(root.<Integer>get("mark"));
+markCond.value(1).value("a"); // 컴파일 시점에 에러!
+```
+---
+
+- Criteria 사용 이점
+- 동적인 검색 조건 지정 가능
+```text
+Predicate p = cb.conjunction();
+
+if (hotelId != null) {
+    p = cb.and(p, cb.equal(root.get("hotelId"), hotelId));
+}
+
+p = cb.and(p, cb.greaterThan(root.get("created"), LocalDateTime.now().minusDays(10)));
+if (mark >= 0) {
+    p = cb.and(p, cb.ge(root.get("mark"), mark));
+}
+
+cq.where(p);
+```
+---
+
+- 그 외
+- 집합 함수
+  - count, max, min, avg, sum
+- group by, having
+- 콜렉션 관련 비교
+  - member of, not member of, is empty, is not empty
+  - exist, all, any
+- jpql 함수
+  - concat, substring, trim, abs, sqrt
+  - 콜렉션 함수 : size, index 등
+---
+
+- 다음 경우는 jpql 말고 일반 쿼리 사용 고려
+- 여러 테이블 조인
+  - 레거시 테이블 조인
+- dbms에 특화된 쿼리 필요
+  - 예, 오라클 힌트
+- 서브 쿼리 필요
+- 통계, 대량 데이터 조회 / 처리
+- 굳이 연관 + 쿼리를 사용하고 싶다면 n+1 문제, fetch 조인 추가 학습
+
 ### jpa flush()
 - jpa로 엔티티를 저장할 경우 커밋 이전까지 실제 db에 저장이 되지않아 데이터 조회시 데이터가 없어 오류 발생
 - 스프링의 경우 @Transactional이 붙은 메서드 실행 종료 시점에 커밋
