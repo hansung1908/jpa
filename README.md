@@ -224,7 +224,7 @@ select r from Review as r
 ```
 ---
 
-- 쿼리 생성
+##### 쿼리 생성
 - TypedQuery<T> ~ = EntityManager.createQuery(String ql, Class<T> resultClass)
 ```text
 TypedQuery<Review> query = em.createQuery(
@@ -235,7 +235,7 @@ List<Review> reviews = query.getResultList();
 ```
 ---
 
-- where + and, or, 괄호 등
+##### where + and, or, 괄호 등
 ```text
 select r from Review r where r.hotelId = :hotelId // :hotelId : 비교 대상 이름 지정
 select r from Review r where r.hotelId = ? // ? : 위치 기반 비교 대상 지정
@@ -244,7 +244,7 @@ select p from Player p where p.position = :pos or p.team.id = :teamId
 ```
 ---
 
-- 파라미터
+##### 파라미터
 - 이름 사용 : query.setParameter("hotelId", "H-001") 
 - 인덱스 기반 : query.setParameter(0, "H-001")
 ```text
@@ -256,7 +256,7 @@ query.setParameter("hotelId", "H-001");
 ```
 ---
 
-- order by
+##### order by
 ```text
 select r from Review r order by r.id // 기본값은 오름차순
 select r from Review r order by r.id asc // 오름차순
@@ -266,19 +266,32 @@ select p from Player p order by p.team.id, p.name
 ```
 ---
 
-- 비교 연산자
+##### 비교 연산자
 ```text
-= : u.name = 'JPA'
-<> : o.state <> ? // !=
-> >= < <= : p.salary > 2000
-between : mc.expiryDate between ? and ?
-in, not in : o.mark in (1, 2, 3)
-like, not like : u.name like '%유%'
-is null, is not null : u.name is null
+=
+u.name = 'JPA'
+
+<>
+o.state <> ? // !=
+
+>, >=, <, <=
+p.salary > 2000
+
+between
+mc.expiryDate between ? and ?
+
+in, not in
+o.mark in (1, 2, 3)
+
+like, not like
+u.name like '%유%'
+
+is null, is not null
+u.name is null
 ```
 ---
 
-- 페이징 처리
+##### 페이징 처리
 - mysql의 경우, 쿼리에서 limit를 통해 페이징 처리
 ```text
 TypedQuery<Review> query = em.createQuery(
@@ -293,7 +306,7 @@ List<Review> reviews = query.getResultList();
 ```
 ---
 
-- 그 외
+##### 그 외
 - 집합 함수
   - count, max, min, avg, sum
 - group by, having
@@ -305,7 +318,7 @@ List<Review> reviews = query.getResultList();
   - 콜렉션 함수 : size, index 등
 ---
 
-- 다음 경우는 jpql 말고 일반 쿼리 사용 고려
+##### 다음 경우는 jpql 말고 일반 쿼리 사용 고려
 - 여러 테이블 조인
   - 레거시 테이블 조인
 - dbms에 특화된 쿼리 필요
@@ -345,7 +358,7 @@ List<Review> reviews = query.getResultList();
 ```
 ---
 
-- 검색 조건 지정
+##### 검색 조건 지정
 - where 메소드에 검색 조건 전달
 - 검색 조건은 cb를 이용해서 생성
 - 예, 같음 조건은 equal 메소드로 생성
@@ -358,7 +371,7 @@ Predicate predicate = cb.equal(root.get("hotelId"), "H-001");
 
 cq.where(predicate);
 ```
-- 조합
+##### 조합
 - and, or 메소드로 조건 조합
 ```text
 Predicate p1 = cb.equal(root.get("hotelId"), "H-001");
@@ -368,7 +381,7 @@ cq.where(predicate);
 ```
 ---
 
-- 정렬 순서
+##### 정렬 순서
 - orderBy 메서드로 정렬 지정
 - asc, desc 메서드로 정렬 정보(Order) 생성
 - 정렬 대상 속성은 get 메서드로 구함
@@ -385,22 +398,48 @@ cq.orderBy(
 ```
 ---
 
-- get 메서드와 제네릭 타입
+##### CriteriaBuilder의 주요 조건 생성 메서드
+- 각 메서드는 조건식인 Predicate을 생성
+- 식 : Expression (예, get 메서드)
+```text
+equal, notEqual(식 x, 식 | Object y)
+cb.equal(root.get("hotelId"), "H-001");
+
+greaterThan, greaterThanOrEqualTo(식 x, 식 | Object y), gt, ge(숫자식 x, 숫자식 | Number y)
+cb.greaterThan(root.get("name"), "00001")
+
+lessThan, lessThanOrEqualTo(식 x, 식 | Object y), lt, le(숫자식 x, 숫자식 | Number y)
+cb.le(root.get("mark"), 3)
+
+between(식 v, 식 | Object x, 식 | Object y)
+cb.between(root.get("createdAt"), from, to);
+
+like, notLike(문자열식 x, 문자열식 | String y)
+cb.like(root.get("name"), "%키워드%");
+
+in(식 v)
+cb.in(root.get("state")).value("1").value("2");
+
+not(조건식)
+cb.not(root.get("name"), "A%");
+```
+
+##### get 메서드와 제네릭 타입
 - <Y> Path<Y> get(String attributeName)
 - in 메소드 조건 생성할 때 타입 파라미터 지정하면 유용
 ```text
 // mark 속성이 int 타입
-CriteriaBuilder.In(Object> markCond = cb.in(root.get("mark"));
+CriteriaBuilder.In<Object> markCond = cb.in(root.get("mark"));
 markCond.value(1).value("a"); // 런타임에 쿼리 생성 시점에 에러!
 ```
 ```text
 // mark 속성이 int 타입
-CriteriaBuilder.In(Object> markCond = cb.in(root.<Integer>get("mark"));
+CriteriaBuilder.In<Integer> markCond = cb.in(root.<Integer>get("mark"));
 markCond.value(1).value("a"); // 컴파일 시점에 에러!
 ```
 ---
 
-- Criteria 사용 이점
+##### Criteria 사용 이점
 - 동적인 검색 조건 지정 가능
 ```text
 Predicate p = cb.conjunction();
@@ -418,7 +457,7 @@ cq.where(p);
 ```
 ---
 
-- 그 외
+##### 그 외
 - 집합 함수
   - count, max, min, avg, sum
 - group by, having
@@ -430,7 +469,7 @@ cq.where(p);
   - 콜렉션 함수 : size, index 등
 ---
 
-- 다음 경우는 jpql 말고 일반 쿼리 사용 고려
+##### 다음 경우는 jpql 말고 일반 쿼리 사용 고려
 - 여러 테이블 조인
   - 레거시 테이블 조인
 - dbms에 특화된 쿼리 필요
