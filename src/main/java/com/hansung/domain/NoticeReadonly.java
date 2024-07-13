@@ -6,7 +6,7 @@ import org.hibernate.annotations.Immutable;
 
 @Entity
 @Table(name = "notice")
-@Immutable
+@Immutable // 조회 목적으로 만 사용하기 위한 어노테이션
 public class NoticeReadonly {
     @Id
     @Column(name = "notice_id")

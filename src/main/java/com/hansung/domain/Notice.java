@@ -6,7 +6,7 @@ import org.hibernate.annotations.Formula;
 
 @Entity
 @Table(name = "notice")
-@DynamicUpdate
+@DynamicUpdate // 변경된 컬럼만 update하기 위한 어노테이션
 public class Notice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

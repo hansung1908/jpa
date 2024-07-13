@@ -33,6 +33,8 @@ public class MainArticle {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
+            // 조회 시 @Subselect로 먼저 걸러진 결과에서 조회 실행
+            // 마치 서브쿼리처럼 사용할 수 있음
             TypedQuery<ArticleListView> query = em.createQuery(
                     "select a from ArticleListView a " +
                             "where a.writtenAt >= :since " +

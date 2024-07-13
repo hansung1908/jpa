@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="criteria 오타 수정 + 내용 추가">
+    <list default="true" id="399aff70-9f30-4500-bf7c-d62ea9391519" name="변경" comment="기타 기능 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/MainCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch19/MainCriteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/ddl.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/ArticleListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/ArticleListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/Notice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/domain/NoticeReadonly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/domain/NoticeReadonly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch20/MainNotice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hansung/main/ch20/MainNotice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720801891395</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="기타 기능 정리">
+      <created>1720882781920</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1720882781920</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -385,6 +392,7 @@
     <MESSAGE value="jpql 정리" />
     <MESSAGE value="criteria 정리" />
     <MESSAGE value="criteria 오타 수정 + 내용 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="criteria 오타 수정 + 내용 추가" />
+    <MESSAGE value="기타 기능 정리" />
+    <option name="LAST_COMMIT_MESSAGE" value="기타 기능 정리" />
   </component>
 </project>

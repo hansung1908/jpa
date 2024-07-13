@@ -71,8 +71,9 @@ public class MainNotice {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            // 수정 쿼리는 기본적으로 모든 칼럼 포함
             Notice notice = em.find(Notice.class, id);
+            // 별도의 설정이나 어노테이션이 없으면
+            // boolean 값을 바꿀 때 다른 모든 갈럼도 같은 값으로 다시 수정됨
             notice.open();
             tx.commit();
         } catch (Exception e) {

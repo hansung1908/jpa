@@ -8,13 +8,13 @@ import org.hibernate.annotations.Subselect;
 
 import java.time.LocalDateTime;
 
-@Subselect(
+@Subselect( // view처럼 쿼리 결과만 가지고 매핑하기 위한 어노테이션, 서브 쿼리 기능
         """
         select a.article_id, a.title, w.name as writer, a.written_at
         from article a left join writer w on a.writer_id = w.id
         """)
 @Entity
-@Immutable
+@Immutable // @Subselect과 같이 사용됨
 public class ArticleListView {
     @Id
     @Column(name = "article_id")

@@ -508,14 +508,15 @@ cq.where(p);
 ##### @Subselect
 - select 결과를 엔티티로 매핑
 - 수정 대상 아니므로 @Immutable과 같이 사용
+- 서브 쿼리와 비슷한 기능
 ---
 
 ##### 기타
 - 상속 매핑
 - 네이티브 쿼리
 - 하이버네이트 어노테이션
-- @CreationTimestamp
-- @UpdateTimestamp
+  - @CreationTimestamp : 최초 엔티티 생성 시간을 자동으로 저장
+  - @UpdateTimestamp : 엔티티 변경 시 변경된 시간을 자동으로 수정
 
 ### jpa flush()
 - jpa로 엔티티를 저장할 경우 커밋 이전까지 실제 db에 저장이 되지않아 데이터 조회시 데이터가 없어 오류 발생
