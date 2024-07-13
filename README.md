@@ -478,6 +478,45 @@ cq.where(p);
 - 통계, 대량 데이터 조회 / 처리
 - 굳이 연관 + 쿼리를 사용하고 싶다면 n+1 문제, fetch 조인 추가 학습
 
+### 기타 기능
+
+##### AttributeConverter
+- 매핑을 지원하지 않는 자바 타입과 db 타입 간 변환 처리
+- 예, boolean 타입과 char(1) 타입 간 변환
+---
+
+##### @Formula
+- sql을 이용한 속성 매핑
+- 조회에서만 매핑 처리 (insert, update 매핑 대상 아님)
+- 하이버네이트 제공 기능 (org.hibernate.annotations.Formula)
+- 주로 db 함수 호출, 서브 쿼리 결과를 매핑
+---
+
+##### @DynamicUpdate, @DynamicInsert
+- @DynamicUpdate : 변경된 칼럼만 update 쿼리에 포함
+- @DynamicInsert : null이 아닌 칼럼만 insert 쿼리에 포함
+- 주의, 기본값을 사용할 수 있음 (null을 지정해야 할 경우 사용 x)
+---
+
+##### @Immutable
+- 변경 추적 대상에서 제외 처리
+- 변경 추적 위한 메모리 사용 감소
+- 주로 조회 목적으로만 사용되는 엔티티 매핑에 사용
+- 참고, @Immutable이 적용된 엔티티도 저장은 됨 + 코드 수준에서 persist() 하지 않도록 주의
+---
+
+##### @Subselect
+- select 결과를 엔티티로 매핑
+- 수정 대상 아니므로 @Immutable과 같이 사용
+---
+
+##### 기타
+- 상속 매핑
+- 네이티브 쿼리
+- 하이버네이트 어노테이션
+- @CreationTimestamp
+- @UpdateTimestamp
+
 ### jpa flush()
 - jpa로 엔티티를 저장할 경우 커밋 이전까지 실제 db에 저장이 되지않아 데이터 조회시 데이터가 없어 오류 발생
 - 스프링의 경우 @Transactional이 붙은 메서드 실행 종료 시점에 커밋

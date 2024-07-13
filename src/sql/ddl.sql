@@ -175,3 +175,24 @@ create table game_member (
   game_id varchar(255),
   role_name varchar(255)
 );
+
+create table notice (
+  notice_id integer auto_increment primary key,
+  title varchar(255) not null,
+  content varchar(255) not null,
+  open_yn char(1),
+  cat varchar(255)
+);
+
+create table category (
+  cat_id varchar(255) primary key,
+  name varchar(255) not null
+);
+
+create table article (
+  article_id integer auto_increment primary key,
+  title varchar(255),
+  writer_id integer,
+  written_at datetime,
+  content mediumtext
+);

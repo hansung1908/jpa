@@ -33,6 +33,9 @@
         <class>com.hansung.domain.SurveyQuestion</class>
         <class>com.hansung.domain.Game</class>
         <class>com.hansung.domain.GameMember</class>
+        <class>com.hansung.domain.Notice</class>
+        <class>com.hansung.domain.NoticeReadonly</class>
+        <class>com.hansung.domain.ArticleListView</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <!-- db 연결 설정 -->

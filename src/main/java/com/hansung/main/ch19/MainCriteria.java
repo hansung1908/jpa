@@ -1,4 +1,4 @@
-package com.hansung.main;
+package com.hansung.main.ch19;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
